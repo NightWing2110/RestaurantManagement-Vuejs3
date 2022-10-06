@@ -7,12 +7,16 @@
       <td>Name</td>
       <td>Contact</td>
       <td>Address</td>
+      <td>Actions</td>
     </tr>
-    <tr v-for="item in restaurant" :key=item.id>
+    <tr v-for="item in restaurant" :key="item.id">
       <td>{{ item.id }}</td>
       <td>{{ item.name }}</td>
       <td>{{ item.contact }}</td>
       <td>{{ item.address }}</td>
+      <td>
+        <router-link :to="'/update-restaurant/' + item.id">Update</router-link>
+      </td>
     </tr>
   </table>
 </template>
@@ -46,7 +50,7 @@ export default {
 </script>
 
 <style>
-td{
+td {
   width: 160px;
   height: 40px;
 }
