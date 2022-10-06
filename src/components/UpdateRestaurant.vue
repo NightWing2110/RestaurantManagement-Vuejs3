@@ -1,24 +1,17 @@
 <template>
   <header-component />
-    <h1>Welcome {{name}} to Home Page</h1>
+    <h1>Update Restaurant Page</h1>
 </template>
 
 <script>
 import HeaderComponent from './HeaderComponent.vue';
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name:'Home',
-  data() {
-    return {
-      name:''
-    }
-  },
+  name:'UpdateRestaurant',
   components:{
     HeaderComponent
   },
   mounted() {
     let user = localStorage.getItem('user-info');
-    this.name = JSON.parse(user).name;
     if(!user)
     {
       this.$router.push({name:'SignUp'})
