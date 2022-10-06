@@ -3,12 +3,18 @@
     <a href="#">Home</a>
     <a href="#">Add Restaurant</a>
     <a href="#">Update Restaurant</a>
-    <a href="#">LogOut</a>
+    <a v-on:click="logout" href="#">LogOut</a>
   </div>
 </template>
 <script>
 export default {
-  name:'HeaderComponent'
+  name:'HeaderComponent',
+  methods: {
+    logout(){
+      localStorage.clear();
+      this.$router.push({name:'Loggin'})
+    }
+  },
 }
 </script>
 <style>
